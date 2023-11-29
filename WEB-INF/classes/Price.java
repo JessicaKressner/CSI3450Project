@@ -2,7 +2,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
 import java.sql.*;
-public class BelowPrice extends HttpServlet 			//class
+public class Price extends HttpServlet 			//class
 {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException,IOException

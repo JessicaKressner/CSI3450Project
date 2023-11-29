@@ -47,7 +47,7 @@ public class agents extends HttpServlet
   			e.printStackTrace();
 		}
 		
-		query = "select  distinct PersonId, firstName from agents order by PersonId";
+		query = "select  distinct LicenseNum , firstName from agents order by LicenseNum";
 		
 		out.println("<html><head><title>Agents Table Report</title>");	 
 		out.println("</head><body>");
