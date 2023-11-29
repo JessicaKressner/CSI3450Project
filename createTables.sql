@@ -131,10 +131,12 @@ CREATE TABLE   person (
 -- `owner` table, a subclass of `person`
 CREATE TABLE  owners (
            PersonId      INTEGER,
-           Profession              CHAR(50),
-           Income                  NUMBER(10,2),
+           HomeId
+           firstName VARCHAR2(50),
+           lastName VARCHAR2(50),
            PRIMARY KEY             (PersonId),
-           FOREIGN KEY (PersonId) REFERENCES PERSON (PersonId)
+           FOREIGN KEY (PersonId) REFERENCES PERSON (PersonId),
+           FOREIGN Key (HomeId) REFERENCES homes (HomeID)
 );
 -- `Agent` table, `Person`
 CREATE TABLE   agents (
