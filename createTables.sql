@@ -140,12 +140,12 @@ CREATE TABLE  owners (
 );
 -- `Agent` table, `Person`
 CREATE TABLE   agents (
-           LicenseNum INTEGER NOT NULL,
+           LICENSENUM INTEGER NOT NULL,
            UNIQUE (LicenseNum),
            CHECK (LicenseNum > 0 ),
-           PersonId      INTEGER,
-           FirstName varchar(20),
-           LastName varchar(20),
+           PERSONID      INTEGER,
+           FIRSTNAME varchar(20),
+           LASTNAME varchar(20),
            PRIMARY KEY (PersonId),
            FOREIGN KEY (PersonId) REFERENCES PERSON (PersonId)
 );
