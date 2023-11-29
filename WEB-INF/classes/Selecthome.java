@@ -76,6 +76,7 @@ public class Selecthome extends HttpServlet 			//class
         out.println("<td align = \"justify\"><font face =\"times new roman\"  size=\"4pt\">CITY</td>");
         out.println("<td align = \"justify\"><font face =\"times new roman\"  size=\"4pt\">ZIP</td>");
         out.println("<td align = \"justify\"><font face =\"times new roman\"  size=\"4pt\">SCHOOLDISTRICT</td>");
+		out.println("<td align = \"justify\"><font face =\"times new roman\"  size=\"4pt\">PRICE</td>");
 		out.println("</tr>");
 		try 
 		{ 
@@ -94,6 +95,7 @@ public class Selecthome extends HttpServlet 			//class
 		    		out.println("<td align = \"justify\"><font face =\"times new roman\"  size=\"4pt\">"+result.getString(10)+"</td>");
                     out.println("<td align = \"justify\"><font face =\"times new roman\"  size=\"4pt\">"+result.getString(11)+"</td>");
 		    		out.println("<td align = \"justify\"><font face =\"times new roman\"  size=\"4pt\">"+result.getString(12)+"</td>");
+					out.println("<td align = \"justify\"><font face =\"times new roman\"  size=\"4pt\">"+result.getString(12)+"</td>");
                     out.println("</tr>");              		
 			} 
 	    }

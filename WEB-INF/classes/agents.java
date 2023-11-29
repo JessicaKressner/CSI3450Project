@@ -47,12 +47,12 @@ public class agents extends HttpServlet
   			e.printStackTrace();
 		}
 		
-		query = "select  distinct LicenseNum , firstName from agents order by LicenseNum";
+		query = "select  distinct LicenseNum, PersonId from agents order by LicenseNum";
 		
 		out.println("<html><head><title>Agents Table Report</title>");	 
 		out.println("</head><body>");
 		
-		out.print( "<br /><b><center><font color=\"RED\"><H2> Agents Table Report test</H2></font>");
+		out.print( "<br /><b><center><font color=\"RED\"><H2> Agents Table Report</H2></font>");
         out.println( "</center><br />" );
        	try 
 		{ 
@@ -65,7 +65,9 @@ public class agents extends HttpServlet
 		out.println("<center><table border=\"1\">"); 
 		out.println("<tr BGCOLOR=\"#cccccc\">");
         out.println("<td align = \"justify\"><font face =\"times new roman\"  size=\"4pt\">Person Id</td>");
-        out.println("<td align = \"justify\"><font face =\"times new roman\"  size=\"4pt\">LicenseNum </td>");
+        out.println("<td align = \"justify\"><font face =\"times new roman\"  size=\"4pt\">LicenseNum</td>");
+		 out.println("<td align = \"justify\"><font face =\"times new roman\"  size=\"4pt\">FirstName</td>");
+        out.println("<td align = \"justify\"><font face =\"times new roman\"  size=\"4pt\">LastName</td>");
         out.println("</tr>");
 		try 
 		{ 
@@ -74,6 +76,8 @@ public class agents extends HttpServlet
 		    	out.println("<tr>");
                 out.println("     <td align = \"justify\"><font face =\"times new roman\"  size=\"4pt\">"+result.getString(1)+"</td>");
 		    	out.println("     <td align = \"justify\"><font face =\"times new roman\"  size=\"4pt\">"+result.getString(2)+"</td>");
+				out.println("     <td align = \"justify\"><font face =\"times new roman\"  size=\"4pt\">"+result.getString(3)+"</td>");
+		    	out.println("     <td align = \"justify\"><font face =\"times new roman\"  size=\"4pt\">"+result.getString(4)+"</td>");
                 out.println("</tr>");
 			} 
 	    }

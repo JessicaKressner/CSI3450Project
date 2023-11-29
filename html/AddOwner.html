@@ -1,17 +1,17 @@
-	<!-- AddAgent.html -->
+	<!-- AddOwner.html -->
 	<html>
 	  <head>
-	    <title>Adding an Agent</title>
+	    <title>Add Owner</title>
 	  </head>
 	  <body bgcolor="#D3D3D3">
 	    &nbsp;<p align="center"><font color="#000000""><b>
-        <font face="Arial" size="4">&nbsp;</font><font face="Bernard MT Condensed" size="5">Add A New Agent
+        <font face="Arial" size="4">&nbsp;</font><font face="Bernard MT Condensed" size="5">Add a New Owner
          </font></b></font></p>
 		<center> 
 		
-		Please enter Person Id and license number
+		Please enter Person Id
 
-	    <form method = "post" action = "/CSI/AddAgent">
+	    <form method = "post" action = "/CSI/AddOwner">
 		<p> 
 		
 		<table>
@@ -25,30 +25,28 @@
 		   </tr>
 		   <tr>
 		      <td>
-			      <font color="black">License Number</font><font color="black">*</font>
+			      <font color="black">Home Id</font><font color="black">*</font>
 			  </td>
 			  <td>
                   <font color="#FF0000"><span style="background-color: #000000">
-	              <input type = "text" name = "LicenseNum" size="25"></span></font>&nbsp; (Can be any number of digits)
+	              <input type = "text" name = "HomeId" size="25"></span></font>&nbsp; (Can be any number of digits)
 			   </td>
 		   </tr>
 		   <tr>
-			<td>
-				<font color="black">First Name</font><font color="black"></font>
-			</td>
-			<td>
-				<font color="#FF0000"><span style="background-color: #000000">
-				<input type = "text" name = "FirstName" size="25"></span></font>&nbsp; (Can be any number of digits)
-			 </td>
+				<td>
+					<font color="black">First Name<font color="black"></font>
+				</td>
+				<td>
+					<input type = "text" name = "FirstName">&nbsp (First name can be any length)
+				</td>
 			</tr>
 			<tr>
 				<td>
-					<font color="black">Last Name</font><font color="black"></font>
+					<font color="black">Last Name<font color="black"></font>
 				</td>
 				<td>
-					<font color="#FF0000"><span style="background-color: #000000">
-					<input type = "text" name = "LastName" size="25"></span></font>&nbsp; (Can be any number of digits)
-				 </td>
+					<input type = "text" name = "LastName">&nbsp (Last name can be any length)
+				</td>
 		   	</tr>
 		 </table>
 	    <br><br>
@@ -94,11 +92,3 @@ return(true);
 // BY STAR28.com
 </SCRIPT>
   	
-		
-		
-		
-		
-		
-		
-	  </body>
-</html>

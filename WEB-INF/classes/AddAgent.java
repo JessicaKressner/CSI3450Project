@@ -17,8 +17,8 @@ public class AddAgent extends HttpServlet
 
     String PersonId = request.getParameter("PersonId");
     String LicenseNum = request.getParameter("LicenseNum");
-    String firstName = request.getParameter("FirstName");
-    String lastName = request.getParameter("LastName");
+    String FirstName = request.getParameter("FirstName");
+    String LastName = request.getParameter("LastName");
     
 
     try 
@@ -27,7 +27,7 @@ public class AddAgent extends HttpServlet
         out.println("Please: Person ID and License Number are required");
         return; 
     }
-    storeAgent(PersonId, LicenseNum, firstName, lastName);
+    storeAgent(PersonId, LicenseNum, FirstName, LastName);
 	out.println("<html><head><title>Agent Registeration Report</title>");	 
 	out.print( "<br /><b><center><font color=\"RED\"><H2>Agent Registeration Report</H2></font>");
     out.println( "</center><br />" );
@@ -41,7 +41,7 @@ public class AddAgent extends HttpServlet
 	*/
 	out.println("</table></center>");
 		
-    out.println(PersonId + " " + LicenseNum + " " + firstName + " " + lastName +
+    out.println(PersonId + " " + LicenseNum +
         " is now added to the Agents table");
 	out.println("</body></html>");
     }
@@ -67,7 +67,7 @@ public class AddAgent extends HttpServlet
 		String password = "mohammed";  
 		Connection conn = DriverManager.getConnection(url,user, password);  
 		pstmt = conn.prepareStatement("insert into agents " +
-        "(PersonId, LicenseNum, firstName, lastName) values (?, ?, ?, ?)");
+        "(PersonId, LicenseNum, FirstName, LastName) values (?, ?, ?, ?)");
     }
     catch (Exception ex) 
 	{
@@ -77,12 +77,12 @@ public class AddAgent extends HttpServlet
 
   
   private void storeAgent(String PersonId, String LicenseNum,
-      String firstName, String lastName) throws SQLException 
+      String FirstName, String LastName) throws SQLException 
  {
     pstmt.setString(1, PersonId);
     pstmt.setString(2, LicenseNum);
-    pstmt.setString(3, firstName);
-    pstmt.setString(4, lastName);
+    pstmt.setString(3, FirstName);
+    pstmt.setString(4, LastName);
     pstmt.executeUpdate();
  }
 }

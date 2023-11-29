@@ -27,7 +27,6 @@ public class AddNewHome extends HttpServlet
     String CITY = request.getParameter("CITY");
     String ZIP = request.getParameter("ZIP");
     String SCHOOLDISTRICT = request.getParameter("SCHOOLDISTRICT");
-    String PRICE = request.getParameter("PRICE");
 
     try 
 	{
@@ -36,7 +35,8 @@ public class AddNewHome extends HttpServlet
         return; 
     }
     storeHome(HOMEID, ADDRESS, FLOORSPACE, FLOORS, BEDROOMS,
-	FULLBATHROOMS, HALFBATHROOMS, LANDSIZE, YEARCONSTRUCTED, CITY, ZIP, SCHOOLDISTRICT, PRICE);
+	FULLBATHROOMS, HALFBATHROOMS, LANDSIZE, YEARCONSTRUCTED, CITY,
+    ZIP, SCHOOLDISTRICT);
 	out.println("<html><head><title>Homes Registeration Report</title>");	 
 	out.print( "<br /><b><center><font color=\"RED\"><H2>Homes Registeration Report</H2></font>");
     out.println( "</center><br />" );
@@ -77,7 +77,7 @@ public class AddNewHome extends HttpServlet
 		Connection conn = DriverManager.getConnection(url,user, password);  
 		pstmt = conn.prepareStatement("insert into homes " +
         "(HOMEID, ADDRESS, FLOORSPACE, FLOORS, BEDROOMS, FULLBATHROOMS, HALFBATHROOMS, "
-         + "LANDSIZE, YEARCONSTRUCTED, CITY, ZIP, SCHOOLDISTRICT, PRICE) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+         + "LANDSIZE, YEARCONSTRUCTED, CITY, ZIP, SCHOOLDISTRICT) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     }
     catch (Exception ex) 
 	{
@@ -88,7 +88,7 @@ public class AddNewHome extends HttpServlet
   
   private void storeHome(String HOMEID, String ADDRESS,
       String FLOORSPACE, String FLOORS, String BEDROOMS, String FULLBATHROOMS,
-      String HALFBATHROOMS, String LANDSIZE, String YEARCONSTRUCTED, String CITY, String ZIP, String SCHOOLDISTRICT, String PRICE) throws SQLException 
+      String HALFBATHROOMS, String LANDSIZE, String YEARCONSTRUCTED, String CITY, String ZIP, String SCHOOLDISTRICT) throws SQLException 
  {
     pstmt.setString(1, HOMEID);
     pstmt.setString(2,ADDRESS);
@@ -102,7 +102,6 @@ public class AddNewHome extends HttpServlet
     pstmt.setString(10, CITY);
     pstmt.setString(11, ZIP);
     pstmt.setString(12, SCHOOLDISTRICT);
-    pstmt.setString(13, PRICE);
     pstmt.executeUpdate();
  }
 }

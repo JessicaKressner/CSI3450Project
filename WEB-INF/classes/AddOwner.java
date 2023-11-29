@@ -40,7 +40,7 @@ public class AddOwner extends HttpServlet
 	*/
 	out.println("</table></center>");
 		
-    out.println(PersonId + " " + HomeId + " " + firstName + " " + lastName +
+    out.println(PersonId +
         " is now added to the table");
 	out.println("</body></html>");
     }

@@ -13,7 +13,7 @@ ALTER USER CSIPROJECT QUOTA UNLIMITED ON USERS;
 
 connect CSIPROJECT/mohammed;
 
-
+`
 CREATE TABLE cities (
       name VARCHAR2(40),
       PRIMARY KEY(name),
@@ -131,7 +131,7 @@ CREATE TABLE   person (
 -- `owner` table, a subclass of `person`
 CREATE TABLE  owners (
            PersonId      INTEGER,
-           HomeId
+           HomeId INTEGER,
            firstName VARCHAR2(50),
            lastName VARCHAR2(50),
            PRIMARY KEY             (PersonId),
@@ -234,3 +234,4 @@ CREATE TABLE  nowOwns (
            FOREIGN KEY (home) REFERENCES homes (homeId),
            PRIMARY KEY (home)
     );
+`
