@@ -15,19 +15,19 @@ public class AddAgent extends HttpServlet
 	response.setContentType("text/html");
     PrintWriter out = response.getWriter();
 
-    String PersonId = request.getParameter("PersonId");
-    String LicenseNum = request.getParameter("LicenseNum");
-    String FirstName = request.getParameter("FirstName");
-    String LastName = request.getParameter("LastName");
+    String PERSONID = request.getParameter("PERSONID");
+    String LICENSENUM = request.getParameter("LICENSENUM");
+    String FIRSTNAME = request.getParameter("FIRSTNAME");
+    String LASTNAME = request.getParameter("LASTNAME");
     
 
     try 
 	{
-      if (PersonId.length() == 0 || LicenseNum.length() == 0) {
+      if (PERSONID.length() == 0 || LICENSENUM.length() == 0) {
         out.println("Please: Person ID and License Number are required");
         return; 
     }
-    storeAgent(PersonId, LicenseNum, FirstName, LastName);
+    storeAgent(PERSONID, LICENSENUM, FIRSTNAME, LASTNAME);
 	out.println("<html><head><title>Agent Registeration Report</title>");	 
 	out.print( "<br /><b><center><font color=\"RED\"><H2>Agent Registeration Report</H2></font>");
     out.println( "</center><br />" );
@@ -41,7 +41,7 @@ public class AddAgent extends HttpServlet
 	*/
 	out.println("</table></center>");
 		
-    out.println(PersonId + " " + LicenseNum +
+    out.println(PERSONID + " " + LICENSENUM +
         " is now added to the Agents table");
 	out.println("</body></html>");
     }
@@ -67,7 +67,7 @@ public class AddAgent extends HttpServlet
 		String password = "mohammed";  
 		Connection conn = DriverManager.getConnection(url,user, password);  
 		pstmt = conn.prepareStatement("insert into agents " +
-        "(PersonId, LicenseNum, FirstName, LastName) values (?, ?, ?, ?)");
+        "(PERSONID, LICENSENUM, FIRSTNAME, LASTNAME) values (?, ?, ?, ?)");
     }
     catch (Exception ex) 
 	{
@@ -76,13 +76,13 @@ public class AddAgent extends HttpServlet
   }
 
   
-  private void storeAgent(String PersonId, String LicenseNum,
-      String FirstName, String LastName) throws SQLException 
+  private void storeAgent(String PERSONID, String LICENSENUM,
+      String FIRSTNAME, String LASTNAME) throws SQLException 
  {
-    pstmt.setString(1, PersonId);
-    pstmt.setString(2, LicenseNum);
-    pstmt.setString(3, FirstName);
-    pstmt.setString(4, LastName);
+    pstmt.setString(1, PERSONID);
+    pstmt.setString(2, LICENSENUM);
+    pstmt.setString(3, FIRSTNAME);
+    pstmt.setString(4, LASTNAME);
     pstmt.executeUpdate();
  }
 }
