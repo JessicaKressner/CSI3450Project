@@ -24,27 +24,6 @@
      <servlet-name>homes</servlet-name>
      <url-pattern>/homes</url-pattern>
   </servlet-mapping>
-
-  <servlet>
-     <servlet-name>agents</servlet-name>
-     <servlet-class>agents</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-     <servlet-name>agents</servlet-name>
-     <url-pattern>/agents</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
-     <servlet-name>owners</servlet-name>
-     <servlet-class>owners</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-     <servlet-name>owners</servlet-name>
-     <url-pattern>/owners</url-pattern>
-  </servlet-mapping>
-  
   
    <servlet>
      <servlet-name>GetParameters</servlet-name>
@@ -108,6 +87,28 @@
   </servlet-mapping>
   
   <servlet>
+     <servlet-name>RegistrationWithCookie</servlet-name>
+     <servlet-class>RegistrationWithCookie</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+     <servlet-name>RegistrationWithCookie</servlet-name>
+     <url-pattern>/RegistrationWithCookie</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+     <servlet-name>RegistrationWithHttpSession</servlet-name>
+     <servlet-class>RegistrationWithHttpSession</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+     <servlet-name>RegistrationWithHttpSession</servlet-name>
+     <url-pattern>/RegistrationWithHttpSession</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
      <servlet-name>AddAgent</servlet-name>
      <servlet-class>AddAgent</servlet-class>
   </servlet>
@@ -127,16 +128,6 @@
      <url-pattern>/AddNewHome</url-pattern>
   </servlet-mapping>
 
-  <servlet>
-     <servlet-name>AddOwner</servlet-name>
-     <servlet-class>AddOwner</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-     <servlet-name>AddOwner</servlet-name>
-     <url-pattern>/AddOwner</url-pattern>
-  </servlet-mapping>
-
  
   <servlet>
      <servlet-name>Price</servlet-name>
@@ -148,15 +139,6 @@
      <url-pattern>/Price</url-pattern>
   </servlet-mapping>
 
-<servlet>
-     <servlet-name>BelowPrice</servlet-name>
-     <servlet-class>BelowPrice</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-     <servlet-name>BelowPrice</servlet-name>
-     <url-pattern>/BelowPrice</url-pattern>
-  </servlet-mapping>
  
 
   <servlet>
@@ -169,25 +151,6 @@
      <url-pattern>/DeleteHome</url-pattern>
   </servlet-mapping>
 
-  <servlet>
-     <servlet-name>DeleteAgent</servlet-name>
-     <servlet-class>DeleteAgent</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-     <servlet-name>DeleteAgent</servlet-name>
-     <url-pattern>/DeleteAgent</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
-     <servlet-name>DeleteOwner</servlet-name>
-     <servlet-class>DeleteOwner</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-     <servlet-name>DeleteOwner</servlet-name>
-     <url-pattern>/DeleteOwner</url-pattern>
-  </servlet-mapping>
 
   <servlet>
      <servlet-name>updateHome</servlet-name>
@@ -199,27 +162,6 @@
      <url-pattern>/updateHome</url-pattern>
   </servlet-mapping>
 
-   <servlet>
-     <servlet-name>updateAgent</servlet-name>
-     <servlet-class>updateAgent</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-     <servlet-name>updateAgent</servlet-name>
-     <url-pattern>/updateAgent</url-pattern>
-  </servlet-mapping>
-
-
-  <servlet>
-     <servlet-name>updateOwner</servlet-name>
-     <servlet-class>updateOwner</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-     <servlet-name>updateOwner</servlet-name>
-     <url-pattern>/updateOwner</url-pattern>
-  </servlet-mapping>
-
   <servlet>
      <servlet-name>Selecthome</servlet-name>
      <servlet-class>Selecthome</servlet-class>
@@ -228,26 +170,6 @@
   <servlet-mapping>
      <servlet-name>Selecthome</servlet-name>
      <url-pattern>/Selecthome</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
-     <servlet-name>SelectAgent</servlet-name>
-     <servlet-class>SelectAgent</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-     <servlet-name>SelectAgent</servlet-name>
-     <url-pattern>/SelectAgent</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
-     <servlet-name>SelectOwner</servlet-name>
-     <servlet-class>SelectOwner</servlet-class>
-  </servlet>
-
-  <servlet-mapping>
-     <servlet-name>SelectOwner</servlet-name>
-     <url-pattern>/SelectOwner</url-pattern>
   </servlet-mapping>
 
   <servlet>

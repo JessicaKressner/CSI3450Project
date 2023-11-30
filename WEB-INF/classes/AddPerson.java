@@ -86,6 +86,7 @@ public class AddPerson extends HttpServlet
     pstmt.setString(4, driversLicenseNr);
     pstmt.setString(5, BirthDate);
     pstmt.setString(6, BirthPlace);
+    
     pstmt.executeUpdate();
  }
 }

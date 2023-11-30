@@ -13,7 +13,7 @@ ALTER USER CSIPROJECT QUOTA UNLIMITED ON USERS;
 
 connect CSIPROJECT/mohammed;
 
-`
+
 CREATE TABLE cities (
       name VARCHAR2(40),
       PRIMARY KEY(name),
@@ -61,8 +61,7 @@ CREATE TABLE homes (
      zip NUMBER(5),
      FOREIGN KEY (zip) REFERENCES zip,
      schoolDistrict VARCHAR2(40),
-     FOREIGN KEY (schoolDistrict) REFERENCES schoolDistrict (name),
-     Price INTEGER
+     FOREIGN KEY (schoolDistrict) REFERENCES schoolDistrict (name)
 );
 CREATE TABLE apartmentComplexes (
       ComplexID        INTEGER,
@@ -121,8 +120,6 @@ CREATE TABLE   person (
            driversLicenseNr   CHAR(13), -- assume only MI licenses?
            BirthDate      DATE,
            BirthPlace     VARCHAR2(50),
-           Profession VARCHAR2(50),
-           Income INTEGER,
            PRIMARY KEY    (PersonId) ,
            UNIQUE         (SSN),
           UNIQUE       (driversLicenseNr),
@@ -131,21 +128,17 @@ CREATE TABLE   person (
 -- `owner` table, a subclass of `person`
 CREATE TABLE  owners (
            PersonId      INTEGER,
-           HomeId INTEGER,
-           firstName VARCHAR2(50),
-           lastName VARCHAR2(50),
+           Profession              CHAR(50),
+           Income                  NUMBER(10,2),
            PRIMARY KEY             (PersonId),
-           FOREIGN KEY (PersonId) REFERENCES PERSON (PersonId),
-           FOREIGN Key (HomeId) REFERENCES homes (HomeID)
+           FOREIGN KEY (PersonId) REFERENCES PERSON (PersonId)
 );
 -- `Agent` table, `Person`
 CREATE TABLE   agents (
-           LICENSENUM INTEGER NOT NULL,
+           LicenseNum INTEGER NOT NULL,
            UNIQUE (LicenseNum),
            CHECK (LicenseNum > 0 ),
-           PERSONID      INTEGER,
-           FIRSTNAME varchar(20),
-           LASTNAME varchar(20),
+           PersonId      INTEGER,
            PRIMARY KEY (PersonId),
            FOREIGN KEY (PersonId) REFERENCES PERSON (PersonId)
 );
@@ -234,4 +227,3 @@ CREATE TABLE  nowOwns (
            FOREIGN KEY (home) REFERENCES homes (homeId),
            PRIMARY KEY (home)
     );
-`
