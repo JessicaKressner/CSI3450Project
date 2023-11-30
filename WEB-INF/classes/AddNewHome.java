@@ -24,9 +24,6 @@ public class AddNewHome extends HttpServlet
     String HALFBATHROOMS = request.getParameter("HALFBATHROOMS");
     String LANDSIZE = request.getParameter("LANDSIZE");
     String YEARCONSTRUCTED = request.getParameter("YEARCONSTRUCTED");
-    String CITY = request.getParameter("CITY");
-    String ZIP = request.getParameter("ZIP");
-    String SCHOOLDISTRICT = request.getParameter("SCHOOLDISTRICT");
 
     try 
 	{
@@ -35,8 +32,7 @@ public class AddNewHome extends HttpServlet
         return; 
     }
     storeHome(HOMEID, ADDRESS, FLOORSPACE, FLOORS, BEDROOMS,
-	FULLBATHROOMS, HALFBATHROOMS, LANDSIZE, YEARCONSTRUCTED, CITY,
-    ZIP, SCHOOLDISTRICT);
+	FULLBATHROOMS, HALFBATHROOMS, LANDSIZE, YEARCONSTRUCTED);
 	out.println("<html><head><title>Homes Registeration Report</title>");	 
 	out.print( "<br /><b><center><font color=\"RED\"><H2>Homes Registeration Report</H2></font>");
     out.println( "</center><br />" );
@@ -77,7 +73,7 @@ public class AddNewHome extends HttpServlet
 		Connection conn = DriverManager.getConnection(url,user, password);  
 		pstmt = conn.prepareStatement("insert into homes " +
         "(HOMEID, ADDRESS, FLOORSPACE, FLOORS, BEDROOMS, FULLBATHROOMS, HALFBATHROOMS, "
-         + "LANDSIZE, YEARCONSTRUCTED, CITY, ZIP, SCHOOLDISTRICT) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+         + "LANDSIZE, YEARCONSTRUCTED) values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
     }
     catch (Exception ex) 
 	{
@@ -88,7 +84,7 @@ public class AddNewHome extends HttpServlet
   
   private void storeHome(String HOMEID, String ADDRESS,
       String FLOORSPACE, String FLOORS, String BEDROOMS, String FULLBATHROOMS,
-      String HALFBATHROOMS, String LANDSIZE, String YEARCONSTRUCTED, String CITY, String ZIP, String SCHOOLDISTRICT) throws SQLException 
+      String HALFBATHROOMS, String LANDSIZE, String YEARCONSTRUCTED) throws SQLException 
  {
     pstmt.setString(1, HOMEID);
     pstmt.setString(2,ADDRESS);
@@ -99,9 +95,6 @@ public class AddNewHome extends HttpServlet
     pstmt.setString(7, HALFBATHROOMS);
     pstmt.setString(8, LANDSIZE);
     pstmt.setString(9, YEARCONSTRUCTED);
-    pstmt.setString(10, CITY);
-    pstmt.setString(11, ZIP);
-    pstmt.setString(12, SCHOOLDISTRICT);
     pstmt.executeUpdate();
  }
 }

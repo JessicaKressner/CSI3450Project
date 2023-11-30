@@ -15,21 +15,20 @@ public class AddAgent extends HttpServlet
 	response.setContentType("text/html");
     PrintWriter out = response.getWriter();
 
-    String PERSONID = request.getParameter("PERSONID");
-    String LICENSENUM = request.getParameter("LICENSENUM");
-    String FIRSTNAME = request.getParameter("FIRSTNAME");
-    String LASTNAME = request.getParameter("LASTNAME");
+    String PersonId = request.getParameter("PersonId");
+    String LicenseNum = request.getParameter("LicenseNum");
     
 
     try 
 	{
-      if (PERSONID.length() == 0 || LICENSENUM.length() == 0) {
-        out.println("Please: Person ID and License Number are required");
+      if (HOMEID.length() == 0 || ADDRESS.length() == 0) {
+        out.println("Please: Home ID and Address are required");
         return; 
     }
-    storeAgent(PERSONID, LICENSENUM, FIRSTNAME, LASTNAME);
-	out.println("<html><head><title>Agent Registeration Report</title>");	 
-	out.print( "<br /><b><center><font color=\"RED\"><H2>Agent Registeration Report</H2></font>");
+    storeHome(HOMEID, ADDRESS, FLOORSPACE, FLOORS, BEDROOMS,
+	FULLBATHROOMS, HALFBATHROOMS, LANDSIZE, YEARCONSTRUCTED);
+	out.println("<html><head><title>Homes Registeration Report</title>");	 
+	out.print( "<br /><b><center><font color=\"RED\"><H2>Homes Registeration Report</H2></font>");
     out.println( "</center><br />" );
 	/*
 	out.println("</head><body>");
@@ -41,8 +40,8 @@ public class AddAgent extends HttpServlet
 	*/
 	out.println("</table></center>");
 		
-    out.println(PERSONID + " " + LICENSENUM +
-        " is now added to the Agents table");
+    out.println(HOMEID + " " + ADDRESS +
+        " is now added to the Homes table");
 	out.println("</body></html>");
     }
     catch(Exception ex) 
@@ -66,8 +65,9 @@ public class AddAgent extends HttpServlet
 		String user = "CSIPROJECT";
 		String password = "mohammed";  
 		Connection conn = DriverManager.getConnection(url,user, password);  
-		pstmt = conn.prepareStatement("insert into agents " +
-        "(PERSONID, LICENSENUM, FIRSTNAME, LASTNAME) values (?, ?, ?, ?)");
+		pstmt = conn.prepareStatement("insert into homes " +
+        "(HOMEID, ADDRESS, FLOORSPACE, FLOORS, BEDROOMS, FULLBATHROOMS, HALFBATHROOMS, "
+         + "LANDSIZE, YEARCONSTRUCTED) values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
     }
     catch (Exception ex) 
 	{
@@ -76,13 +76,19 @@ public class AddAgent extends HttpServlet
   }
 
   
-  private void storeAgent(String PERSONID, String LICENSENUM,
-      String FIRSTNAME, String LASTNAME) throws SQLException 
+  private void storeHome(String HOMEID, String ADDRESS,
+      String FLOORSPACE, String FLOORS, String BEDROOMS, String FULLBATHROOMS,
+      String HALFBATHROOMS, String LANDSIZE, String YEARCONSTRUCTED) throws SQLException 
  {
-    pstmt.setString(1, PERSONID);
-    pstmt.setString(2, LICENSENUM);
-    pstmt.setString(3, FIRSTNAME);
-    pstmt.setString(4, LASTNAME);
+    pstmt.setString(1, HOMEID);
+    pstmt.setString(2,ADDRESS);
+    pstmt.setString(3, FLOORSPACE);
+    pstmt.setString(4, FLOORS);
+    pstmt.setString(5, BEDROOMS);
+    pstmt.setString(6, FULLBATHROOMS);
+    pstmt.setString(7, HALFBATHROOMS);
+    pstmt.setString(8, LANDSIZE);
+    pstmt.setString(9, YEARCONSTRUCTED);
     pstmt.executeUpdate();
  }
 }

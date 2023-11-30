@@ -1,3 +1,8 @@
+// Paul Pietrzyk
+// Java MCS3603
+// Assignment 6
+// Nov 8, 2008
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
