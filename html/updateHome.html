@@ -1,183 +1,166 @@
-	<!--updateHome.html-->
-	<html>
-	  <head>
-	    <title>Update Home</title>
-	  </head>
-	  <body bgcolor="#D3D3D3">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Home</title>
+    <style>
+      body {
+        background-color: #d3d3d3;
+        color: #000000;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+      }
+      .center {
+        text-align: center;
+      }
+      table {
+        width: 100%;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #000000;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <p><b style="font-size: 24px">Update Home</b></p>
+    </div>
 
+    <div class="center">
+      <p>Please enter home ID and address.</p>
 
-	  <Body Text="#000000">
-	    &nbsp;<p align="center"><font color="black""><b>
-        <font face="Arial" size="4">&nbsp;</font><font face="Bernard MT Condensed" size="5">Update Home</font></b></font></p>
-		<center> 
-		
-		Please enter home id and address.
+      <form method="post" action="/CSI/updateHome">
+        <table>
+          <tr>
+            <td>Home ID <font color="#000000">*</font></td>
+            <td>
+              <input
+                type="text"
+                name="HOMEID"
+                placeholder="Can be any number of digits"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Address <font color="#000000">*</font></td>
+            <td><input type="text" name="ADDRESS" size="25" /></td>
+          </tr>
+          <tr>
+            <td>Floor Space</td>
+            <td>
+              <input type="text" name="FLOORSPACE" size="25" /> (Please enter in
+              sq.ft)
+            </td>
+          </tr>
+          <tr>
+            <td>Floors</td>
+            <td><input type="text" name="FLOORS" size="25" /></td>
+          </tr>
+          <tr>
+            <td>Bedrooms</td>
+            <td><input type="text" name="BEDROOMS" size="25" /></td>
+          </tr>
+          <tr>
+            <td>Full Bathrooms</td>
+            <td><input type="text" name="FULLBATHROOMS" size="25" /></td>
+          </tr>
+          <tr>
+            <td>Half Bathrooms</td>
+            <td><input type="text" name="HALFBATHROOMS" size="25" /></td>
+          </tr>
+          <tr>
+            <td>Land Size</td>
+            <td>
+              <input type="text" name="LANDSIZE" size="25" /> (Please enter in
+              acres)
+            </td>
+          </tr>
+          <tr>
+            <td>Year Constructed</td>
+            <td>
+              <input type="text" name="YEARCONSTRUCTED" size="25" /> (Ex. 1950)
+            </td>
+          </tr>
+          <tr>
+            <td>City</td>
+            <td><input type="text" name="CITY" size="25" /></td>
+          </tr>
+          <tr>
+            <td>Zip</td>
+            <td>
+              <input type="text" name="ZIP" size="25" /> (Please enter 5 digits)
+            </td>
+          </tr>
+          <tr>
+            <td>School District</td>
+            <td><input type="text" name="SCHOOLDISTRICT" size="25" /></td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td><input type="text" name="PRICE" size="25" /></td>
+          </tr>
+        </table>
 
-	    <form method = "post" action = "/CSI/AddNewHome">
-		<p> 
-		
-		<table>
-		  <tr>
-		     <td>
-		         <font color="#000000">Home ID <font color = "#000000">*</font>
-			 </td>
-			 <td>
-	            <input type = "text" name = "HOMEID">&nbsp; (Can be any number of digits)
-			 </td>
-		   </tr>
-		   <tr>
-		      <td>
-			      <font color="#000000">Address</font><font color="#000000">*</font>
-			  </td>
-			  <td>
-                  <font color="#000000"><span style="background-color: #000000">
-	              <input type = "text" name = "ADDRESS" size="25"></span></font>&nbsp; 
-			   </td>
-			   <tr>
-		      <td>
-			      <font color="#000000">Floor Space</font><font color="#000000">
-			  </td>
-			  <td>
-                  <font color="#000000"><span style="background-color: #000000">
-	              <input type = "text" name = "FLOORSPACE" size="25"></span></font>&nbsp; (Please enter in sq.ft)
-			   </td>
-		   </tr>
-		   <tr>
-		      <td>
-			      <font color="#000000">Floors</font><font color="#000000">
-			  </td>
-			  <td>
-                  <font color="#000000"><span style="background-color: #000000">
-	              <input type = "text" name = "FLOORS" size="25"></span></font>&nbsp; 
-			   </td>
-		   </tr>
-		   <tr>
-		      <td>
-			      <font color="#000000">Bedrooms</font><font color="#000000">
-			  </td>
-			  <td>
-                  <font color="#000000"><span style="background-color: #000000">
-	              <input type = "text" name = "BEDROOMS" size="25"></span></font>&nbsp; 
-			   </td>
-		   </tr>
-		   <tr>
-		      <td>
-			      <font color="#000000">Full Bathrooms</font><font color="#000000">
-			  </td>
-			  <td>
-                  <font color="#000000"><span style="background-color: #000000">
-	              <input type = "text" name = "FULLBATHROOMS" size="25"></span></font>&nbsp; 
-			   </td>
-		   </tr>
-		   <tr>
-		      <td>
-			      <font color="#000000">Half Bathrooms</font><font color="#000000">
-			  </td>
-			  <td>
-                  <font color="#000000"><span style="background-color: #000000">
-	              <input type = "text" name = "HALFBATHROOMS" size="25"></span></font>&nbsp; 
-			   </td>
-		   </tr>
-		   <tr>
-		      <td>
-			      <font color="#000000">Land Size</font><font color="#000000">
-			  </td>
-			  <td>
-                  <font color="#000000"><span style="background-color: #000000">
-	              <input type = "text" name = "LANDSIZE" size="25"></span></font>&nbsp; (Please enter in acres)
-			   </td>
-		   </tr>
-		   <tr>
-		      <td>
-			      <font color="#000000">Year Constructed</font><font color="#000000">
-			  </td>
-			  <td>
-                  <font color="#000000"><span style="background-color: #000000">
-	              <input type = "text" name = "YEARCONSTRUCTED" size="25"></span></font>&nbsp; (Ex. 1950)
-			   </td>
-		   </tr>
-		   <tr>
-				<td>
-					<font color="#000000">City</font><font color="#000000"></font>
-				</td>
-				<td>
-					<font color="#000000"><span style="background-color: #000000">
-					<input type="text" name = "CITY" size="25"></span></font>&nbsp;
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<font color="#000000">Zip</font><font color="#000000"></font>
-				</td>
-				<td>
-					<font color="#000000"><span style="background-color: #000000"</font>
-					<input type="text" name="ZIP" size="25"></span>&nbsp; (Please enter 5 digits)
-				</td>
-		   </tr>
-		   <tr>
-				<td>
-					<font color="#000000">School District</font><font color="#000000"></font>
-				</td>
-				<td>
-					<font color="#000000"><span style="background-color: #000000"</font>
-					<input type="text" name="SCHOOLDISTRICT" size="25"></span>&nbsp;
-				</td>
-		   </tr>
-		   <tr>
-				<td>
-					<font color="#000000">Price</font><font color="#000000"></font>
-				</td>
-				<td>
-					<font color="#000000"><span style="background-color: #000000"</font>
-					<input type="text" name="PRICE" size="25"></span>&nbsp;
-				</td>
-		   </tr>
-		   </tr>
-		 </table>
-	    <br><br>
-		  <table>
-		     <tr>
-			    <td>
-			        <input type = "submit" name = "Submit" value = "Submit">
-				</td>
-				<td>
-	               <input type = "reset" value = "Reset">
-				</td>
-				<td>
-					<button><a href="../index.html" style="text-decoration: none"><font color= "#000000">Home</font></a></button>
-				</td>
-			</tr>
-		  </table>
-	      </p>
-	    </form>
-	    <p><font color = "#000000">Note: * required fields</font></p>
-		
-		</center>
-		
-		<OBJECT classid=CLSID:D45FD31B-5C6E-11D1-9EC1-00C04FD7081F id=ricci width="32"
+        <br /><br />
 
-height="32"></OBJECT>
-<SCRIPT>
+        <table>
+          <tr>
+            <td><input type="submit" name="Submit" value="Submit" /></td>
+            <td><input type="reset" value="Reset" /></td>
+            <td>
+              <button>
+                <a
+                  href="../index.html"
+                  style="text-decoration: none; color: #ffffff"
+                  >Home</a
+                >
+              </button>
+            </td>
+          </tr>
+        </table>
+      </form>
 
-var MerlinID;
-var MerlinACS;
-ricci.Connected = true;
-MerlinLoaded = LoadLocalAgent(MerlinID, MerlinACS);
-Merlin = ricci.Characters.Character(MerlinID);
-Merlin.Show();
-Merlin.Play("congratulate");
-Merlin.Speak("Great,.... Mary just listed another house.  ..");
-Merlin.Play("domagic1");
-//Merlin.Speak("Greating Doctor Azar, I am glad to see you at..house dot com.  ");
-Merlin.Hide();
-function LoadLocalAgent(CharID, CharACS) {
-LoadReq = ricci.Characters.Load(CharID, CharACS);
-return(true);
-}
-// BY STAR28.com
-</SCRIPT>
-  
-		
-		
-	  </body>
+      <p><font color="#000000">Note: * required fields</font></p>
+    </div>
+
+    <object
+      classid="CLSID:D45FD31B-5C6E-11D1-9EC1-00C04FD7081F"
+      id="ricci"
+      width="32"
+      height="32"
+    ></object>
+
+    <script>
+      var MerlinID;
+      var MerlinACS;
+      ricci.Connected = true;
+      MerlinLoaded = LoadLocalAgent(MerlinID, MerlinACS);
+      Merlin = ricci.Characters.Character(MerlinID);
+      Merlin.Show();
+      Merlin.Play("congratulate");
+      Merlin.Speak("Great,.... Mary just listed another house.  ..");
+      Merlin.Play("domagic1");
+      //Merlin.Speak("Greating Doctor Azar, I am glad to see you at..house dot com.  ");
+      Merlin.Hide();
+
+      function LoadLocalAgent(CharID, CharACS) {
+        LoadReq = ricci.Characters.Load(CharID, CharACS);
+        return true;
+      }
+    </script>
+  </body>
 </html>

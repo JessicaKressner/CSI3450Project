@@ -1,58 +1,96 @@
-	<!-- homesForSale.html -->
-	<html>
-	  <head>
-	    <title> Homes For Sale</title>
-	  </head>
-	  <body bgcolor="#D3D3D3">
-	    &nbsp;<p align="center"><font color="#000000"><b>
-        <font face="Arial" size="4">&nbsp;</font><font face="Bernard MT Condensed" size="5">Homes For Sale In A Given City </font></b></font></p>
-	 
-       
-		<center> 
+<!-- homesForSale.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homes For Sale</title>
+    <style>
+      body {
+        background-color: #d3d3d3;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
 
-	    <form method = "get" action = "/CSI/homesForSale">
-	     <center> <p><b><font color="#000000">City</font></b> <font color = "BLUE">
-          <font color="#FF0000"><span style="background-color: #000000">
-	         
-				<input type = "text" name = "CITY"="25"></span></font>
-	         <p><font size="4" color="#fffafa"></center>
-             </p>
-	         <p><input type = "submit" name = "Submit" value = "Submit">
-	        <input type = "reset" value = "Reset">
-			<td>
-				<button><a href="../index.html" style="text-decoration: none"><font color= "#000000">Home</font></a></button>
-			</td>
-	        </p>
-	    </form>
-            <p>
-	        <p><font color = "#cdad00"> </font></p>
-            </p>
-          </center>
-		 <OBJECT classid=CLSID:D45FD31B-5C6E-11D1-9EC1-00C04FD7081F id=ricci width="32"
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
 
-height="32"></OBJECT>
-<SCRIPT>
+      h1 {
+        text-align: center;
+        color: #000000;
+        font-size: 24px;
+        margin-top: 20px;
+      }
 
-var MerlinID;
-var MerlinACS;
-ricci.Connected = true;
-MerlinLoaded = LoadLocalAgent(MerlinID, MerlinACS);
-Merlin = ricci.Characters.Character(MerlinID);
-Merlin.Show();
-Merlin.Play("congratulate");
-Merlin.Speak("Lets see what's for sale in a given city.  ..");
-Merlin.Play("domagic1");
-//Merlin.Speak("Greating Doctor Azar, I am glad to see you at..house dot com.  ");
-Merlin.Hide();
-function LoadLocalAgent(CharID, CharACS) {
-LoadReq = ricci.Characters.Load(CharID, CharACS);
-return(true);
-}
-// BY STAR28.com
-</SCRIPT>
-		   
-		  
-		  
-		  
-	  </body>
+      form {
+        text-align: center;
+      }
+
+      label {
+        color: #000000;
+        font-weight: bold;
+      }
+
+      input[type="text"] {
+        width: 200px;
+        padding: 8px;
+        margin: 8px 0;
+        box-sizing: border-box;
+      }
+
+      input[type="submit"],
+      input[type="reset"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        margin: 10px;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Homes For Sale In A Given City</h1>
+
+      <form method="get" action="/CSI/homesForSale">
+        <label for="city"><b>City</b></label>
+        <input
+          type="text"
+          name="CITY"
+          id="city"
+          placeholder="Enter city name"
+        />
+        <br />
+        <input type="submit" name="Submit" value="Submit" />
+        <input type="reset" value="Reset" />
+        <button>
+          <a href="../index.html" style="text-decoration: none; color: #ffffff"
+            >Home</a
+          >
+        </button>
+      </form>
+
+      <script>
+        // Your script here
+      </script>
+    </div>
+  </body>
 </html>

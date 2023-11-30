@@ -1,104 +1,111 @@
-	<!-- AddAgent.html -->
-	<html>
-	  <head>
-	    <title>Adding an Agent</title>
-	  </head>
-	  <body bgcolor="#D3D3D3">
-	    &nbsp;<p align="center"><font color="#000000""><b>
-        <font face="Arial" size="4">&nbsp;</font><font face="Bernard MT Condensed" size="5">Add A New Agent
-         </font></b></font></p>
-		<center> 
-		
-		Please enter Person Id and license number
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adding an Agent</title>
+    <style>
+      body {
+        background-color: #d3d3d3;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
 
-	    <form method = "post" action = "/CSI/AddAgent">
-		<p> 
-		
-		<table>
-		  <tr>
-		     <td>
-		         <font color="black">Person Id <font color = "black">*</font>
-			 </td>
-			 <td>
-	            <input type = "text" name = "PERSONID">&nbsp; 
-			 </td>
-		   </tr>
-		   <tr>
-		      <td>
-			      <font color="black">License Number</font><font color="black">*</font>
-			  </td>
-			  <td>
-                  <font color="#FF0000"><span style="background-color: #000000">
-	              <input type = "text" name = "LICENSENUM" size="25"></span></font>&nbsp; (Can be any number of digits)
-			   </td>
-		   </tr>
-		   <tr>
-			<td>
-				<font color="black">First Name</font><font color="black"></font>
-			</td>
-			<td>
-				<font color="#FF0000"><span style="background-color: #000000">
-				<input type = "text" name = "FIRSTNAME" size="25"></span></font>&nbsp; (Can be any number of digits)
-			 </td>
-			</tr>
-			<tr>
-				<td>
-					<font color="black">Last Name</font><font color="black"></font>
-				</td>
-				<td>
-					<font color="#FF0000"><span style="background-color: #000000">
-					<input type = "text" name = "LASTNAME" size="25"></span></font>&nbsp; (Can be any number of digits)
-				 </td>
-		   	</tr>
-		 </table>
-	    <br><br>
-		  <table>
-		     <tr>
-			    <td>
-			        <input type = "submit" name = "Submit" value = "Submit">
-				</td>
-				<td>
-	               <input type = "reset" value = "Reset">
-				</td>
-				<td>
-					<button><a href="../index.html" style="text-decoration: none"><font color= "#000000">Home</font></a></button>
-				</td>
-			</tr>
-		  </table>
-	      </p>
-	    </form>
-	    <p><font color = "black">Note: * required fields</font></p>
-		
-		</center>
-		
-	<OBJECT classid=CLSID:D45FD31B-5C6E-11D1-9EC1-00C04FD7081F id=ricci width="32"
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+      }
 
-height="32"></OBJECT>
-<SCRIPT>
+      h1 {
+        color: #000000;
+        font-size: 24px;
+        margin-top: 20px;
+      }
 
-var MerlinID;
-var MerlinACS;
-ricci.Connected = true;
-MerlinLoaded = LoadLocalAgent(MerlinID, MerlinACS);
-Merlin = ricci.Characters.Character(MerlinID);
-Merlin.Show();
-Merlin.Play("congratulate");
-Merlin.Speak("Hello everyone, ....Let's welcome a new agent.  ..");
-Merlin.Play("domagic1");
-//Merlin.Speak("Greating Doctor Azar, I am glad to see you at..house dot com.  ");
-Merlin.Hide();
-function LoadLocalAgent(CharID, CharACS) {
-LoadReq = ricci.Characters.Load(CharID, CharACS);
-return(true);
-}
-// BY STAR28.com
-</SCRIPT>
-  	
-		
-		
-		
-		
-		
-		
-	  </body>
+      form {
+        margin-top: 20px;
+      }
+
+      table {
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      table td {
+        padding: 8px;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+      }
+
+      input[type="submit"],
+      input[type="reset"],
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Add A New Agent</h1>
+
+      <form method="post" action="/CSI/AddAgent">
+        <table>
+          <tr>
+            <td><label for="personId">Person Id *</label></td>
+            <td><input type="text" name="PERSONID" id="personId" /></td>
+          </tr>
+          <tr>
+            <td><label for="licenseNum">License Number *</label></td>
+            <td><input type="text" name="LICENSENUM" id="licenseNum" /></td>
+          </tr>
+          <tr>
+            <td><label for="firstName">First Name</label></td>
+            <td><input type="text" name="FIRSTNAME" id="firstName" /></td>
+          </tr>
+          <tr>
+            <td><label for="lastName">Last Name</label></td>
+            <td><input type="text" name="LASTNAME" id="lastName" /></td>
+          </tr>
+        </table>
+
+        <br />
+
+        <table>
+          <tr>
+            <td><input type="submit" name="Submit" value="Submit" /></td>
+            <td><input type="reset" value="Reset" /></td>
+            <td>
+              <button>
+                <a
+                  href="../index.html"
+                  style="text-decoration: none; color: #ffffff"
+                  >Home</a
+                >
+              </button>
+            </td>
+          </tr>
+        </table>
+      </form>
+
+      <p><font color="black">Note: * required fields</font></p>
+    </div>
+
+    <script>
+      // Your script here
+    </script>
+  </body>
 </html>

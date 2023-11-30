@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Select Sale Price</title>
+    <title>Owner Deletion</title>
     <style>
       body {
         background-color: #d3d3d3;
@@ -56,12 +56,12 @@
 
   <body>
     <div class="container">
-      <h1>Homes Equal To Or Less Than</h1>
+      <h1>Owner Deletion</h1>
 
-      <form method="get" action="/CSI/Price">
+      <form method="post" action="/CSI/DeleteOwner">
         <p>
-          Price<font color="#f8f8ff"></font>
-          <input type="text" name="price" />&nbsp;
+          Person Id <font color="#FF0000"></font>
+          <input type="text" name="Person Id" />&nbsp;
         </p>
         <p>
           <input type="submit" name="Submit" value="Submit" />

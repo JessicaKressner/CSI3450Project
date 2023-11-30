@@ -1,65 +1,60 @@
-		<!-- updateOwner.html -->
-	<html>
-	  <head>
-	    <title>Update Owner</title>
-	  </head>
-	  <body bgcolor="#D3D3D3">
-         &nbsp;<p align="center"><font color="#000000"><b>
-        <font face="Arial" size="4">&nbsp;</font><font face="Bernard MT Condensed" size="5">Update Owner's Profession </font></b></font></p>
-	  
-	    <center> Please enter the owner's id and his change of proffession</center>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Owner Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        margin: 50px;
+      }
+      form {
+        max-width: 300px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Update Owner</h2>
 
-	    <form method = "get" action = "/CSI/updateOwner">
-	        <p>&nbsp;&nbsp;&nbsp;&nbsp; 
-			</p>
-            
-			<center>
-                
-			<font color="#000000">Owner ID<font color = "#000000">
-	        <input type = "text" name = "PERSONID">&nbsp;
-	        
-			<font color="#000000">Profession <font color = "#000000">
-	        <input type = "text" name = "PROFESSION">&nbsp;
-	        </p>
-	         
-			<p><input type = "submit" name = "Submit" value = "Submit">
-	        <input type = "reset" value = "Reset">
-			<td>
-				<button><a href="../index.html" style="text-decoration: none"><font color= "#000000">Home</font></a></button>
-			</td>
-	        </p>
-	    </form>
-            <p>
-	        <p><font color = "#000000"> </font></p>
-            </p>
-            </center>
-			
-			<OBJECT classid=CLSID:D45FD31B-5C6E-11D1-9EC1-00C04FD7081F id=ricci width="32"
+    <form action="/updateOwner" method="post">
+      <label for="homeIdToUpdate">Home ID to Update:</label>
+      <input type="text" id="homeIdToUpdate" name="homeIdToUpdate" required />
 
-height="32"></OBJECT>
-<SCRIPT>
+      <label for="newFirstName">New First Name:</label>
+      <input type="text" id="newFirstName" name="newFirstName" required />
 
-var MerlinID;
-var MerlinACS;
-ricci.Connected = true;
-MerlinLoaded = LoadLocalAgent(MerlinID, MerlinACS);
-Merlin = ricci.Characters.Character(MerlinID);
-Merlin.Show();
-Merlin.Play("congratulate");
-Merlin.Speak("Now,..Beforewego, we need to update this person's profession.");
-Merlin.Play("domagic1");
-Merlin.Speak("Well,...Doctor Naser El-Bathy, I hope this demonstration has shown to be satisfactory, and thankyou. ");
-Merlin.Hide();
-function LoadLocalAgent(CharID, CharACS) {
-LoadReq = ricci.Characters.Load(CharID, CharACS);
-return(true);
-}
-// BY STAR28.com
-</SCRIPT>
-		   
-		
-			
-			
-			
-	  </body>
+      <label for="newLastName">New Last Name:</label>
+      <input type="text" id="newLastName" name="newLastName" required />
+
+      <button type="submit">Update Owner</button>
+    </form>
+  </body>
 </html>

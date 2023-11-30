@@ -1,61 +1,84 @@
-		<!-- Selecthome.html -->
-        <html>
-            <head>
-              <title>Select Agent</title>
-            </head>
-            <body bgcolor="#D3D3D3">
-                &nbsp;<p align="center"><font color="#000000"><b>
-              <font face="Arial" size="4">&nbsp;</font><font face="Bernard MT Condensed" size="5">Select An Agent </font></b></font></p>
-           
-              <center> Please Enter LicenseNum </center>
-      
-              <form method = "get" action = "/CSI/Selecthome">
-                  <p>&nbsp;&nbsp;&nbsp;&nbsp; 
-                  </p>
-                   
-                  <center>
-                      
-                  LicenseNum <font color = "white"></font>
-                  <input type = "text" name = "LicenseNum">&nbsp;
-                  </p>
-
-                  <p><input type = "submit" name = "Submit" value = "Submit">
-                  <input type = "reset" value = "Reset">
-                  <td>
-					<button><a href="../index.html" style="text-decoration: none"><font color= "#000000">Home</font></a></button>
-				</td>
-                  </p>
-              </form>
-                  <p>
-                  <p><font color = "white"> </font></p>
-                  </p>
-              </center>
-              
-              <OBJECT classid=CLSID:D45FD31B-5C6E-11D1-9EC1-00C04FD7081F id=ricci width="32"
-      
-      height="32"></OBJECT>
-      <SCRIPT>
-      
-      var MerlinID;
-      var MerlinACS;
-      ricci.Connected = true;
-      MerlinLoaded = LoadLocalAgent(MerlinID, MerlinACS);
-      Merlin = ricci.Characters.Character(MerlinID);
-      Merlin.Show();
-      Merlin.Play("congratulate");
-      Merlin.Speak("Good,... I'm glad your interested, let's see what this house has to offer..");
-      Merlin.Play("domagic1");
-      //Merlin.Speak("Greating Doctor Azar, I am glad to see you at..house dot com.  ");
-      Merlin.Hide();
-      function LoadLocalAgent(CharID, CharACS) {
-      LoadReq = ricci.Characters.Load(CharID, CharACS);
-      return(true);
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Agent</title>
+    <style>
+      body {
+        background-color: #d3d3d3;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
       }
-      // BY STAR28.com
-      </SCRIPT>
-                 
-              
-              
-              
-            </body>
-      </html>
+
+      .container {
+        max-width: 400px;
+        margin: 50px auto;
+        text-align: center;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #000000;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+
+      input[type="text"] {
+        width: 80%;
+        padding: 8px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+      }
+
+      input[type="submit"],
+      input[type="reset"],
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Select An Agent</h1>
+
+      <form method="get" action="/CSI/SelectAgent">
+        <p>
+          LicenseNum <font color="white"></font>
+          <input type="text" name="LicenseNum" />&nbsp;
+        </p>
+        <p>
+          <input type="submit" name="Submit" value="Submit" />
+          <input type="reset" value="Reset" />
+          <button>
+            <a
+              href="../index.html"
+              style="text-decoration: none; color: #ffffff"
+              >Home</a
+            >
+          </button>
+        </p>
+      </form>
+    </div>
+
+    <script>
+      // Your script here
+    </script>
+  </body>
+</html>
